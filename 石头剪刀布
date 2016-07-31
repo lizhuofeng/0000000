@@ -1,0 +1,34 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+void main()
+{
+int  w,c,i=0,j=0;
+printf("我们来玩剪刀石头布的游戏0代表石头，1代表剪刀，2代表布\n");
+do{
+	do{
+		printf("请出拳");
+		scanf("%d",&w);
+		if(w<0||w>2)
+		{printf("输入有误，请重新输入！");}
+	}while(w<0||w>2);
+		srand(time(NULL));
+		c=rand()%3;
+		printf("电脑出%d，我出%d\n",c,w);
+		if(w==c)
+		{printf("平了");}
+		else if(w==0&&c==1||w==1&&c==2||w==2&&c==0)
+		{printf("赢了");i++;}
+		else
+		{printf("输了");j++;}
+}while(i==3||j==3);
+if(i==3)
+{printf("你赢了！\n");}
+if(j==3) 
+{printf("你输了。\n");}
+		
+
+
+
+
+}
